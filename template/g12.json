@@ -1,0 +1,83 @@
+{
+  "schema_version": "2.1.0",
+  "template_version": "1.4.3",
+  "tenant_scope": "co-corporate-global-ae",
+  "field_revision_hash": "a4b2c1d8e0f93a8c5432bd1a7c6f5e4d2c1b0a9f8e7d6c5b4a3f2e1d0c9b8a7f",
+  "created_at": "2026-05-22T16:50:51Z",
+  "updated_at": "2026-05-22T16:50:51Z",
+  "template_metadata": {
+    "name": "B2B Unified Corporate Registration Accord",
+    "description": "Form mapping for standardized trading certification templates.",
+    "document_type": "legal_agreement",
+    "supported_languages": ["en", "ar"]
+  },
+  "fields_mapping": [
+    {
+      "field_id": "corporate_id",
+      "label": "Corporate Entity ID (Regulated)",
+      "type": "alphanumeric",
+      "required": true,
+      "page_index": 0,
+      "x_percentage": 14.50,
+      "y_percentage": 22.85,
+      "validation_rules": {
+        "regex": "^REG-[0-9]{5}-[A-Z]{2}$",
+        "min_length": 11,
+        "max_length": 15,
+        "error_message": "Supplied ID must conform to standard regulation format: REG-99999-XX."
+      }
+    },
+    {
+      "field_id": "registered_trade_name_ar",
+      "label": "Registered Trade Name (Arabic RTL)",
+      "type": "arabic",
+      "required": true,
+      "page_index": 0,
+      "x_percentage": 14.50,
+      "y_percentage": 30.15,
+      "validation_rules": {
+        "regex": "^[\\u0600-\\u06FF\\s]+$",
+        "error_message": "Arabic Trade Name must contain only Arabic letters and spaces."
+      }
+    },
+    {
+      "field_id": "operational_capital_usd",
+      "label": "Operational Equity Capital (USD)",
+      "type": "numeric",
+      "required": false,
+      "page_index": 0,
+      "x_percentage": 14.50,
+      "y_percentage": 37.45,
+      "validation_rules": {
+        "regex": "^[0-9]+(\\.[0-9]{2})?$",
+        "error_message": "Equity metrics must be numerical floats with optional decimal precision."
+      }
+    },
+    {
+      "field_id": "incorporation_date",
+      "label": "Date of Incorporation",
+      "type": "date",
+      "required": true,
+      "page_index": 0,
+      "x_percentage": 55.20,
+      "y_percentage": 37.45,
+      "validation_rules": {
+        "regex": "^\\d{4}-\\d{2}-\\d{2}$",
+        "error_message": "Incorporation Date must match ISO-8601 standard format: YYYY-MM-DD."
+      }
+    },
+    {
+      "field_id": "authorized_officer_signature_seal",
+      "label": "Officer Signature and Seal Matrix Point",
+      "type": "signature",
+      "required": true,
+      "page_index": 0,
+      "x_percentage": 32.40,
+      "y_percentage": 78.90,
+      "validation_rules": {
+        "max_byte_size": 204800,
+        "error_message": "Signature upload exceeds security bounds (200KB limit)."
+      }
+    }
+  ]
+}

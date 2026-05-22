@@ -1,0 +1,14 @@
+{
+  "name": "b2b-smart-doc-engine",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "uvicorn api.v1:app --host 0.0.0.0 --port 3000",
+    "build": "echo 'Stack purified. No Node build required.'",
+    "start": "uvicorn api.v1:app --host 0.0.0.0 --port 3000",
+    "lint": "echo 'No node linting needed'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

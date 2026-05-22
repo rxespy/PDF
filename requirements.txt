@@ -1,0 +1,16 @@
+# B2B Smart Document Automation Engine - Production Dependencies
+# Target Runtime: Python 3.11+ on Render with Supabase PostgreSQL
+
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.4
+pydantic-settings>=2.2.1
+sqlalchemy>=2.0.28
+supabase>=2.4.0
+pymupdf>=1.23.26
+arabic-reshaper>=3.0.0
+python-bidi>=0.4.2
+structlog>=24.1.0
+python-multipart>=0.0.9
+psycopg2-binary>=2.9.9
+gunicorn>=21.2.0

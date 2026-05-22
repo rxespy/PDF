@@ -1,0 +1,31 @@
+# deploy/render.yaml
+# Render Blueprint Specification for B2B Smart Document Workspace
+# Decoupled deployment config provisioning unified database & servers
+
+services:
+  # 1. FastAPI Uvicorn Python backend service
+  - type: web
+    name: b2b-automation-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -k uvicorn.workers.UvicornWorker api.v1:app --bind 0.0.0.0:$PORT"
+    envVars:
+      - key: SUPABASE_URL
+        sync: true
+      - key: SUPABASE_SERVICE_KEY
+        sync: true
+      - key: DATABASE_URL
+        sync: true
+      - key: PORT
+        value: 10000
+    autoDeploy: true
+
+  # 2. Alpine/Tailwind Single Page Static site
+  - type: web
+    name: b2b-automation-frontend
+    env: static
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+    autoDeploy: true

@@ -1,0 +1,6 @@
+{
+  "name": "B2B Document Automation System",
+  "description": "Enterprise MVP foundation for a smart form-filling and document automation system with coordinate alignment matrices and Arabic RTL support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
